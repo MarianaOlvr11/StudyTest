@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"/>
+  <!--<link rel="stylesheet" href="css/normalize.css">-->
+</head>
+
+<body style="background: #FE621D;">
+<div style="width: 1400px; height: 1024px; position: relative; background: #FE621D">
+  <div style="width: 196px; height: 38px; left: 810px; top: 138px; position: absolute; color: white; font-size: 32px; font-family: Arial; font-weight: 400; word-wrap: break-word">Cadastre-se</div>
+  <div style="width: 354px; height: 38px; left: 810px; top: 187px; position: absolute; color: white; font-size: 32px; font-family: Arial; font-weight: 700; word-wrap: break-word">Coloque seus dados:</div>
+
+  <form action="/register" method="post" th:object="${user}" style="width: 530px; position: absolute; left: 808px; top: 327px; font-family: Arial; font-weight: bold;">
+    <div style="margin-bottom: 15px;">
+      <label for="username" style="color: white;">Nome de usuário: </label>
+      <input type="text" name="username" id="username" th:field="*{username}" style="width: 100%; border: 1px solid white; border-radius: 8px; padding: 5px;" required />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="email" style="color: white;">Email: </label>
+      <input type="email" name="email" id="email" th:field="*{email}" style="width: 100%; border: 1px solid white; border-radius: 8px; padding: 5px;" required />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="password" style="color: white;">Senha: </label>
+      <input type="password" name="password" id="password" th:field="*{password}" style="width: 100%; border: 1px solid white; border-radius: 8px; padding: 5px;" required />
+    </div>
+
+    <button type="submit" style="width: 315px; height: 49px; background: #00B3AD; box-shadow: 3px 6px 7px rgba(0, 0, 0, 0.10); border-radius: 18px; color: white; border: none; cursor: pointer; font-size: 20px; font-weight: bold;">
+      Cadastrar
+    </button>
+    <a href="/login" style="display: inline-block; width: 210px; height: 49px; background: #6866de; box-shadow: 3px 6px 7px rgba(0, 0, 0, 0.10); border-radius: 18px; color: white; text-align: center; line-height: 49px; text-decoration: none; font-size: 18px; font-weight: bold; cursor: pointer;">
+      Fazer Login
+    </a>
+
+  </form>
+
+  <img style="width: 593px; height: 675px; left: -7px; top: 244px; position: absolute" src="/img/Group 7.png" />
+</div>
+</body>
+</html>

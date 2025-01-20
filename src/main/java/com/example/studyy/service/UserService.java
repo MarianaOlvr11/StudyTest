@@ -15,8 +15,6 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-
-
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -26,27 +24,26 @@ public class UserService {
             throw new IllegalArgumentException("Nome de usuário já existe.");
         }
 
-
-        // criptografar senha
+        // Criptografar a senha antes de salvar no banco
         String encodedPassword = passwordEncoder.encode(rawpassword);
 
-        // Criar novo user
+        // Criar novo user com a senha criptografada
         User user = new User(username, email);
-       return userRepository.save(user);
+        user.setPassword(encodedPassword);  // Aqui você precisa garantir que está configurando a senha criptografada
 
-
+        return userRepository.save(user);
     }
 
     public Optional<User> loginUser(String username, String rawpassword) {
         // Buscar pelo userName
         User user = userRepository.findByUsername(username);
 
-        // Ve se a senha existe
-        if (user != null && passwordEncoder.matches(rawpassword, user.getPasswordHash())) {
+        // Verifica se a senha bate
+        if (user != null && passwordEncoder.matches(rawpassword, user.getPassword())) {
             return Optional.of(user);
         }
 
-        // Se nao bater
+        // Senha não bate, ou usuário não existe
         return Optional.empty();
     }
 

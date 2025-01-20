@@ -1,0 +1,81 @@
+.menu {
+    list-style: none; /* Remove marcadores */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Espaço entre os itens */
+    position: absolute;
+    top: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    font-size: 29px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.55);
+    display: block;
+    height: 38px; /* Altura para centralizar texto */
+    line-height: 38px; /* Centraliza verticalmente */
+    transition: color 0.3s;
+    margin: 0 25px; /* Adiciona 15px de margem horizontal */
+}
+
+
+.menu li a:hover {
+    color: rgba(0, 0, 0, 0.8); /* Mudança de cor no hover */
+}
+
+.botao-container {
+    width: 191px;
+    height: 38px;
+    position: absolute;
+    left: 294px;
+    top: 592px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao {
+    text-decoration: none;
+    font-size: 32px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    color: white;
+    word-wrap: break-word;
+    display: block; /* Para ocupar o espaço completo do container */
+    text-align: center;
+    transition: color 0.3s;
+}
+
+.botao:hover {
+    color: #ccc; /* Altere a cor ao passar o mouse */
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimentos padrão */
+    
+}
+
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Opcional, pode ajustar conforme necessário */
+    height: 100%; /* Ocupa toda a altura do body */
+}
+

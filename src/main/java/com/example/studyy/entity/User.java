@@ -15,7 +15,7 @@ public class User {
     private String username;
 
     @Column(nullable = false) // coluna não nula
-    private String passwordHash;
+    private String password;
 
     @Column(nullable = false, unique = true) // coluna não nula sem emails repetidos
     private String email;
@@ -31,7 +31,7 @@ public class User {
 
     public User(String username, String passwordHash, String email) {
         this.username = username;
-        this.passwordHash = passwordHash;
+        this.password = passwordHash;
         this.email = email;
     }
 
@@ -45,12 +45,12 @@ public class User {
         this.username = username;
     }
 
-    public String getPasswordHash() {
-        return passwordHash;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswordHash(String password) {
-        this.passwordHash = password;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {

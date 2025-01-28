@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="style.css"> <!-- Supondo que seu CSS está em um arquivo separado -->
+</head>
+
+<body style="background: #FE621D;">
+<div style="width: 1400px; height: 1024px; position: relative; background: #FE621D;">
+    <div style="width: 196px; height: 38px; left: 810px; top: 138px; position: absolute; color: white; font-size: 32px; font-family: Arial; font-weight: 400; word-wrap: break-word">Redefinir Senha</div>
+
+    <!-- Formulário para redefinir senha -->
+    <form action="/reset" method="post" style="width: 530px; position: absolute; left: 808px; top: 240px; font-family: Arial; font-weight: bold;">
+        <input type="hidden" name="token" th:value="${param.token}">
+
+        <div style="margin-bottom: 15px;">
+            <label for="newPassword" style="color: white;">Nova Senha: </label>
+            <input type="password" name="newPassword" id="newPassword" style="width: 100%; border: 1px solid white; border-radius: 8px; padding: 5px;" required placeholder="Digite sua nova senha">
+        </div>
+
+        <button type="submit" style="width: 180px; height: 49px; background: #00B3AD; box-shadow: 3px 6px 7px rgba(0, 0, 0, 0.10); border-radius: 18px; color: white; border: none; cursor: pointer; font-size: 20px; font-weight: bold;">
+            Redefinir
+        </button>
+
+        <a href="/login" style="display: inline-block; width: 160px; height: 40px; background: #b0b0b0; box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.10); border-radius: 18px; color: white; text-align: center; line-height: 40px; text-decoration: none; font-size: 16px; font-weight: bold; cursor: pointer;">
+            Voltar ao Login
+        </a>
+    </form>
+
+    <img style="width: 593px; height: 675px; left: -7px; top: 244px; position: absolute" src="img/Group 7.png" />
+</div>
+</body>
+</html>
